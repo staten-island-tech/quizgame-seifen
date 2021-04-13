@@ -1,13 +1,22 @@
- 
+ body {
+	 background-color: black;
+	 text-align: center;
+	 font-family: 'Shadows Into Light', cursive;
+ }
 
 #heading{
-    color: black;
+    color: whitesmoke;
     text-align: center;
+	font-size: 4.5vh;
 }
 .question{
+	color: whitesmoke;
 	font-weight: 600;
+	font-size: 3.5vh;
 }
 .answers {
+	font-size: 2vh;
+	color: whitesmoke;
   margin-bottom: 20px;
 }
 .answers label{
@@ -26,4 +35,7 @@
 }
 #submit:hover{
 	background-color: #38a;
+}
+#results {
+	color: whitesmoke;
 }

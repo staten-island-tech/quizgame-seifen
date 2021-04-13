@@ -1,4 +1,7 @@
 (function () {
+  const quizContainer = document.getElementById("quiz");
+  const resultsContainer = document.getElementById("results");
+  const submitButton = document.getElementById("submit");
   function buildQuiz() {
     const output = [];
 
@@ -26,9 +29,9 @@
 
   function showResults() {
     const answerContainers = quizContainer.querySelectorAll(".answers");
-
     let numCorrect = 0;
 
+    
     myQuestions.forEach((currentQuestion, questionNumber) => {
       const answerContainer = answerContainers[questionNumber];
       const selector = `input[name=question${questionNumber}]:checked`;
@@ -48,53 +51,29 @@
     resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
   }
 
-  const quizContainer = document.getElementById("quiz");
-  const resultsContainer = document.getElementById("results");
-  const submitButton = document.getElementById("submit");
   const myQuestions = [
     {
-      question: "What is 2+2?",
+      question: "What subject do you teach or what subject would you want to teach?",
       answers: {
-        a: "8",
-        b: "3",
-        c: "4",
+        a: "science or history",
+        b: "math or english",
+        c: "russian or other staff",
+        d: "technology or electives",
       },
-      correctAnswer: "c",
     },
     {
       question:
-        "In California you can't legally buy a mousetrap without having what?",
+        "What word would you use to describe yourself?",
       answers: {
-        a: "a mouse",
-        b: "a Hunting license",
-        c: "a Driver's license",
-        d: "children",
+        a: "funny",
+        b: "serious",
+        c: "quirky",
+        d: "scary",
       },
-      correctAnswer: "b",
     },
-    {
-      question: "Is the Earth flat?",
-      answers: {
-        a: "yes",
-        b: "no",
-      },
-      correctAnswer: "a",
-    },
-    {
-      question: "In Kansas it's illegal to eat cherry pie with what?",
-      answers: {
-        a: "Ice Cream",
-        b: "Apple Pie",
-        c: "A man over sixty",
-        d: "Your mom",
-      },
-      correctAnswer: "a",
-    },
-  ];
-
-  // Kick things off
+    ];
+  
   buildQuiz();
-
-  // Event listeners
+  
   submitButton.addEventListener("click", showResults);
 })();
