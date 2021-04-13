@@ -53,25 +53,44 @@
 
   const myQuestions = [
     {
-      question: "What subject do you teach or what subject would you want to teach?",
+      question: "What is 2+2?",
       answers: {
-        a: "science or history",
-        b: "math or english",
-        c: "russian or other staff",
-        d: "technology or electives",
+        a: "8",
+        b: "3",
+        c: "4",
       },
+      correctAnswer: "c",
     },
     {
       question:
-        "What word would you use to describe yourself?",
+        "In California you can't legally buy a mousetrap without having what?",
       answers: {
-        a: "funny",
-        b: "serious",
-        c: "quirky",
-        d: "scary",
+        a: "a mouse",
+        b: "a Hunting license",
+        c: "a Driver's license",
+        d: "children",
       },
+      correctAnswer: "b",
     },
-    ];
+    {
+      question: "Is the Earth flat?",
+      answers: {
+        a: "yes",
+        b: "no",
+      },
+      correctAnswer: "b",
+    },
+    {
+      question: "In Kansas it's illegal to eat cherry pie with what?",
+      answers: {
+        a: "Ice Cream",
+        b: "Apple Pie",
+        c: "A man over sixty",
+        d: "Your mom",
+      },
+      correctAnswer: "a",
+    },
+  ];
   
   buildQuiz();
   
