@@ -91,7 +91,8 @@
       correctAnswer: "a",
     },
   ];
-  
+
+
   buildQuiz();
   
   submitButton.addEventListener("click", showResults);
