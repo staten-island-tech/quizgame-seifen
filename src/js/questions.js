@@ -1,12 +1,13 @@
- 
-(function() {
-    const myQuestions = [
+export { myQuestions };
+
+const myQuestions = [
   {
     question: "What is 2+2?",
     answers: {
       a: "8",
       b: "3",
       c: "4",
+      d: "6"
     },
     correctAnswer: "c",
   },
@@ -17,7 +18,7 @@
       a: "a mouse",
       b: "a Hunting license",
       c: "a Driver's license",
-      d: "children",
+      d: "children"
     },
     correctAnswer: "b",
   },
@@ -26,6 +27,8 @@
     answers: {
       a: "yes",
       b: "no",
+      c: "yes",
+      d: "no"
     },
     correctAnswer: "b",
   },
@@ -35,12 +38,8 @@
       a: "Ice Cream",
       b: "Apple Pie",
       c: "A man over sixty",
-      d: "Your mom",
+      d: "Your mom"
     },
     correctAnswer: "a",
   },
 ];
- buildQuiz();
-
- submitButton.addEventListener("click", showResults);
-})()

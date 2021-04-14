@@ -1,3 +1,5 @@
+import { myQuestions } from "./questions.js";
+
 (function () {
   const quizContainer = document.getElementById("quiz");
   const resultsContainer = document.getElementById("results");
@@ -8,7 +10,7 @@
     myQuestions.forEach((currentQuestion, questionNumber) => {
       const answers = [];
 
-      for (letter in currentQuestion.answers) {
+      for (const letter in currentQuestion.answers) { 
         answers.push(
           `<label>
               <input type="radio" name="question${questionNumber}" value="${letter}">
@@ -31,7 +33,6 @@
     const answerContainers = quizContainer.querySelectorAll(".answers");
     let numCorrect = 0;
 
-    
     myQuestions.forEach((currentQuestion, questionNumber) => {
       const answerContainer = answerContainers[questionNumber];
       const selector = `input[name=question${questionNumber}]:checked`;
@@ -41,9 +42,7 @@
         numCorrect++;
 
         answerContainers[questionNumber].style.color = "lightgreen";
-      }
-
-      else {
+      } else {
         answerContainers[questionNumber].style.color = "red";
       }
     });
@@ -51,49 +50,7 @@
     resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
   }
 
-  const myQuestions = [
-    {
-      question: "What is 2+2?",
-      answers: {
-        a: "8",
-        b: "3",
-        c: "4",
-      },
-      correctAnswer: "c",
-    },
-    {
-      question:
-        "In California you can't legally buy a mousetrap without having what?",
-      answers: {
-        a: "a mouse",
-        b: "a Hunting license",
-        c: "a Driver's license",
-        d: "children",
-      },
-      correctAnswer: "b",
-    },
-    {
-      question: "Is the Earth flat?",
-      answers: {
-        a: "yes",
-        b: "no",
-      },
-      correctAnswer: "b",
-    },
-    {
-      question: "In Kansas it's illegal to eat cherry pie with what?",
-      answers: {
-        a: "Ice Cream",
-        b: "Apple Pie",
-        c: "A man over sixty",
-        d: "Your mom",
-      },
-      correctAnswer: "a",
-    },
-  ];
-
-
   buildQuiz();
-  
+
   submitButton.addEventListener("click", showResults);
 })();
