@@ -30,15 +30,17 @@ import { myQuestions } from "./questions.js";
 
     quizContainer.innerHTML = output.join("");
   }
-
   function showResults() {
+    if (!confirm("Are you sure you want to submit?")) {
+      return;
+    }
     const answerContainers = quizContainer.querySelectorAll(".answers");
     let numCorrect = 0;
 
     myQuestions.forEach((currentQuestion, questionNumber) => {
       const answerContainer = answerContainers[questionNumber];
       const selector = `input[name=question${questionNumber}]:checked`;
-      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+      const userAnswer = (answerContainer.querySelector(selector)|| {}).value;
 
       if (userAnswer === currentQuestion.correctAnswer) {
         numCorrect++;
