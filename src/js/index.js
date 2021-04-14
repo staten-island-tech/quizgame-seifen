@@ -10,7 +10,7 @@ import { myQuestions } from "./questions.js";
     myQuestions.forEach((currentQuestion, questionNumber) => {
       const answers = [];
 
-      for (const letter in currentQuestion.answers) { 
+      for (const letter in currentQuestion.answers) {
         answers.push(
           `<label>
               <input type="radio" name="question${questionNumber}" value="${letter}">
@@ -21,7 +21,9 @@ import { myQuestions } from "./questions.js";
       }
 
       output.push(
-        `<div class="question"> ${currentQuestion.question} </div>
+        `<div class="question">${questionNumber + 1}. ${
+          currentQuestion.question
+        } </div>
           <div class="answers"> ${answers.join("")} </div>`
       );
     });
@@ -48,6 +50,15 @@ import { myQuestions } from "./questions.js";
     });
 
     resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+    if (numCorrect < 0.6 * myQuestions.length) {
+      resultsContainer.innerHTML =
+        resultsContainer.innerHTML + `<div>You failed! :( </div>`;
+    } else {
+      resultsContainer.innerHTML =
+        resultsContainer.innerHTML + `<div>Congrats! You passed!</div>`;
+    }
+    resultsContainer.innerHTML =
+      `<div class = "answers">` + resultsContainer.innerHTML + `</div>`;
   }
 
   buildQuiz();

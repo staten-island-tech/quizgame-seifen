@@ -7,7 +7,7 @@ const myQuestions = [
       a: "8",
       b: "3",
       c: "4",
-      d: "6"
+      d: "6",
     },
     correctAnswer: "c",
   },
@@ -18,17 +18,17 @@ const myQuestions = [
       a: "a mouse",
       b: "a Hunting license",
       c: "a Driver's license",
-      d: "children"
+      d: "children",
     },
     correctAnswer: "b",
   },
   {
-    question: "Is the Earth flat?",
+    question: "Ulaanbaatar is the capital of what country?",
     answers: {
-      a: "yes",
-      b: "no",
-      c: "yes",
-      d: "no"
+      a: "Laos",
+      b: "Mongolia",
+      c: "Chad",
+      d: "Burkina Faso",
     },
     correctAnswer: "b",
   },
@@ -38,7 +38,7 @@ const myQuestions = [
       a: "Ice Cream",
       b: "Apple Pie",
       c: "A man over sixty",
-      d: "Your mom"
+      d: "Your mom",
     },
     correctAnswer: "a",
   },
